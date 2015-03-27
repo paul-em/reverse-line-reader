@@ -23,8 +23,6 @@ describe("lineReader", function () {
       var i = 0;
 
       lineReader.eachLine(testFilePath, function (line, last) {
-        console.log('a');
-        console.log('1', testFile[i], '2', line, testFile[i] === line);
         assert.equal(testFile[i], line, 'Each line should be what we expect');
         i += 1;
 
