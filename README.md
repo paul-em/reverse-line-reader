@@ -1,12 +1,12 @@
-Reverse Line Reader[![Build Status](https://secure.travis-ci.org/paul-em/reverse-line-reader.png?branch=master)](http://travis-ci.org/paul-em/reverse-line-reader)
+Reverse Line Reader [![Build Status](https://secure.travis-ci.org/paul-em/reverse-line-reader.png?branch=master)](http://travis-ci.org/paul-em/reverse-line-reader)
 ===========
 
-Asynchronous line-by-line reverse file reader. This is a fork of line-reader by Nick Ewing's [line-reader](https://github.com/nickewing/line-reader)
+Asynchronous reverse line-by-line file reader. This is a fork of line-reader by Nick Ewing's [line-reader](https://github.com/nickewing/line-reader)
 
 Install
 -------
 
-`npm install line-reader`
+`npm install reverse-line-reader`
 
 Usage
 -----
@@ -53,18 +53,6 @@ callback is provided to `then`, it will be called once all lines have been read.
       console.log("I'm done!!");
     });
 
-
-For more granular control, `open`, `hasNextLine`, and `nextLine` maybe be used
-to iterate a file:
-
-    // or read line by line:
-    lineReader.open('file.txt', function(reader) {
-      if (reader.hasNextLine()) {
-        reader.nextLine(function(line) {
-          console.log(line);
-        });
-      }
-    });
 
 Contributors
 ------------
