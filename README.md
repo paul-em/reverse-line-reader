@@ -1,4 +1,4 @@
-Line Reader
+Line Reader [![Build Status](https://secure.travis-ci.org/paul-em/line-reader.png?branch=master)](http://travis-ci.org/paul-em/line-reader) - Master (stable) branch
 ===========
 
 Asynchronous line-by-line file reader.
