@@ -1,8 +1,8 @@
 {
-  "name": "line-reader-reverse",
+  "name": "reverse-line-reader",
   "version": "0.2.4",
   "description": "Asynchronous line-by-line reverse file reader",
-  "url": "https://github.com/paul-em/line-reader",
+  "url": "https://github.com/paul-em/reverse-line-reader",
   "keywords": [
     "file",
     "line",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://nickewing@github.com/nickewing/line-reader.git"
+    "url": "https://github.com/paul-em/reverse-line-reader.git"
   },
   "devDependencies": {
     "mocha": "^2.2.1"
