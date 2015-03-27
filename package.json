@@ -1,15 +1,16 @@
 {
-  "name": "line-reader",
-  "version": "0.2.3",
-  "description": "Asynchronous line-by-line file reader",
-  "url": "https://github.com/nickewing/line-reader",
+  "name": "line-reader-reverse",
+  "version": "0.2.4",
+  "description": "Asynchronous line-by-line reverse file reader",
+  "url": "https://github.com/paul-em/line-reader-reverse",
   "keywords": [
     "file",
     "line",
     "reader",
-    "scanner"
+    "scanner",
+    "reverse"
   ],
-  "author": "Nick Ewing <nick@nickewing.net>",
+  "author": "Nick Ewing <nick@nickewing.net>, Paul Em <paul3m@gmail.com>",
   "directories": {
     "lib": "./lib"
   },
