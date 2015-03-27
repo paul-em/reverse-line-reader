@@ -2,7 +2,7 @@
   "name": "line-reader-reverse",
   "version": "0.2.4",
   "description": "Asynchronous line-by-line reverse file reader",
-  "url": "https://github.com/paul-em/line-reader-reverse",
+  "url": "https://github.com/paul-em/line-reader",
   "keywords": [
     "file",
     "line",
