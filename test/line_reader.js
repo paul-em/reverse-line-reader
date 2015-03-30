@@ -24,15 +24,14 @@ describe("lineReader", function () {
 
       lineReader.eachLine(testFilePath, function (line, last) {
         assert.equal(testFile[i], line, 'Each line should be what we expect');
-        i -= 1;
-
         if (i === 0) {
           assert.ok(last);
         } else {
           assert.ok(!last);
         }
+        i -= 1;
       }).then(function () {
-        assert.equal(0, i);
+        assert.equal(-1, i);
         done();
       });
     });
@@ -42,51 +41,47 @@ describe("lineReader", function () {
 
       lineReader.eachLine(testFilePath, function (line, last, cb) {
         assert.equal(testFile[i], line, 'Each line should be what we expect');
-        i -= 1;
-
         if (i === 0) {
           assert.ok(last);
         } else {
           assert.ok(!last);
         }
-
         process.nextTick(cb);
+        i -= 1;
       }).then(function () {
-        assert.equal(0, i);
+        assert.equal(-1, i);
         done();
       });
     });
 
     it("should separate files using given separator", function (done) {
-      var i = testFile.length - 1;
+      var i = testSeparatorFile.length - 1;
       lineReader.eachLine(separatorFilePath, function (line, last) {
         assert.equal(testSeparatorFile[i], line);
-        i -= 1;
-
-        if (i === 3) {
+        if (i === 0) {
           assert.ok(last);
         } else {
           assert.ok(!last);
         }
+        i -= 1;
       }, ';').then(function () {
-        assert.equal(3, i);
+        assert.equal(-1, i);
         done();
       });
     });
 
     it("should separate files using given separator with more than one character", function (done) {
-      var i = testFile.length - 1;
+      var i = testSeparatorFile.length - 1;
       lineReader.eachLine(multiSeparatorFilePath, function (line, last) {
         assert.equal(testSeparatorFile[i], line);
-        i -= 1;
-
-        if (i === 3) {
+        if (i === 0) {
           assert.ok(last);
         } else {
           assert.ok(!last);
         }
+        i -= 1;
       }, '||').then(function () {
-        assert.equal(3, i);
+        assert.equal(-1, i);
         done();
       });
     });
@@ -95,13 +90,12 @@ describe("lineReader", function () {
       var i = testFile.length - 1;
       lineReader.eachLine(testFilePath, function (line, last) {
         assert.equal(testFile[i], line, 'Each line should be what we expect');
-        i -= 1;
-
         if (i === 2) {
           return false;
         }
+        i -= 1;
       }).then(function () {
-        assert.equal(2, i);
+        assert.equal(1, i);
         done();
       });
     });
@@ -110,14 +104,13 @@ describe("lineReader", function () {
       var i = testFile.length - 1;
       lineReader.eachLine(testFilePath, function (line, last, cb) {
         assert.equal(testFile[i], line, 'Each line should be what we expect');
-        i -= 1;
 
+        i -= 1;
         if (i === 2) {
           cb(false);
         } else {
           cb();
         }
-
       }).then(function () {
         assert.equal(2, i);
         done();
