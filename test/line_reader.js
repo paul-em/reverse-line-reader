@@ -95,7 +95,7 @@ describe("lineReader", function () {
         }
         i -= 1;
       }).then(function () {
-        assert.equal(1, i);
+        assert.equal(2, i);
         done();
       });
     });
