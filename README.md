@@ -13,8 +13,8 @@ Usage
 
 The `eachLine` function reads each line of the given file.  Upon each new line,
 the given callback function is called with two parameters: the line read and a
-boolean value specifying whether the line read was the last line of the file.
-If the callback returns `false`, reading will stop and the file will be closed.
+boolean value specifying whether the line read was the first line of the file.
+If the callback returns `false`, reading will stop.
 
     var lineReader = require('reverse-line-reader');
 
