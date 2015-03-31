@@ -1,7 +1,7 @@
 Reverse Line Reader [![Build Status](https://secure.travis-ci.org/paul-em/reverse-line-reader.png?branch=master)](http://travis-ci.org/paul-em/reverse-line-reader)
 ===========
 
-Asynchronous reverse line-by-line file reader. This started a fork of line-reader by Nick Ewing's [line-reader](https://github.com/nickewing/line-reader). Major parts are rewritten to read the file from bottom to top, but the api works more or less the same.
+Asynchronous reverse line-by-line file reader. This started as a fork of line-reader by Nick Ewing's [line-reader](https://github.com/nickewing/line-reader). Major parts are rewritten to read the file from bottom to top, but the api works more or less the same.
 
 Install
 -------
