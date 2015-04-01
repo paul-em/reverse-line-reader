@@ -19,7 +19,7 @@ var lineReader = require('../lib/line_reader'),
 
 describe("lineReader", function () {
   describe("eachLine", function () {
-    it("should read lines using the defalut separator", function (done) {
+    it("should read lines using the default separator", function (done) {
       var i = testFile.length - 1;
 
       lineReader.eachLine(testFilePath, function (line, last) {
@@ -31,6 +31,40 @@ describe("lineReader", function () {
         }
         i -= 1;
       }).then(function () {
+        assert.equal(-1, i);
+        done();
+      });
+    });
+
+    it("should read lines using the default separator and smaller buffer", function (done) {
+      var i = testFile.length - 1;
+
+      lineReader.eachLine(testFilePath, function (line, last) {
+        assert.equal(testFile[i], line, 'Each line should be what we expect');
+        if (i === 0) {
+          assert.ok(last);
+        } else {
+          assert.ok(!last);
+        }
+        i -= 1;
+      }, undefined, undefined, 10).then(function () {
+        assert.equal(-1, i);
+        done();
+      });
+    });
+
+    it("should read lines using the default separator and even smaller buffer", function (done) {
+      var i = testFile.length - 1;
+
+      lineReader.eachLine(testFilePath, function (line, last) {
+        assert.equal(testFile[i], line, 'Each line should be what we expect');
+        if (i === 0) {
+          assert.ok(last);
+        } else {
+          assert.ok(!last);
+        }
+        i -= 1;
+      }, undefined, undefined, 6).then(function () {
         assert.equal(-1, i);
         done();
       });
