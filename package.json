@@ -1,6 +1,6 @@
 {
   "name": "reverse-line-reader",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Asynchronous line-by-line reverse file reader",
   "url": "https://github.com/paul-em/reverse-line-reader",
   "keywords": [
